@@ -4,7 +4,7 @@ $("#menu").click(function(e) {
 
 });
 
-$("#content").click(function(e) {
+$("#exit").click(function(e) {
   e.preventDefault();
-  console.log("click");
+  $("#sidebar").css('left', '-100vw');
 });
