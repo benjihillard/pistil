@@ -1,0 +1,86 @@
+<div class="row" style="background-color: #E28413;">
+  <div class="col-12 d-flex p-4 justify-content-center">
+    <div class="align-self-center">
+      <hr style="border-top: 6px solid black; border-radius: 2px;">
+      <p class="p-2 pacifico">Tell Your Story!</p>
+      <hr style="border-top: 6px solid black; border-radius: 2px;">
+    </div>
+  </div>
+</div>
+<div class="row" style="background-color: #E28413;">
+  <div class="col-12 d-flex p-4 justify-content-center">
+    <div class="align-self-center">
+      <p class="p-4 fira-sans" style="font-size: 1.2em;">Pie halvah croissant cookie pudding caramels oat cake danish jelly. Pie powder tiramisu danish gummies chocolate cake jelly. Marshmallow candy canes wafer carrot cake. Soufflé tootsie roll
+        dessert oat
+        cake candy canes cake lemon drops carrot cake. Ice cream biscuit marzipan toffee marzipan cake. Pie croissant danish pastry sweet candy. Cake carrot cake jelly-o. Chocolate cake brownie bear claw. Jelly-o danish biscuit macaroon danish
+        carrot cake. Oat cake cupcake lollipop gummies oat cake. Tiramisu jelly-o cake tootsie roll cheesecake gummies cookie donut. Dessert dessert muffin. Cheesecake halvah cake toffee danish bear claw chocolate cake cotton candy toffee. Wafer
+        chupa chups brownie marshmallow marshmallow biscuit.</p>
+    </div>
+  </div>
+</div>
+<div class="row justify-content-center" style="background-color: #E28413;">
+  <div class="col-8 p-4">
+    <div class="align-self-center">
+      <form method="post" action="/submissions" encType="multipart/form-data">
+        <div class="form-group">
+          <label for="penName">Pen Name</label>
+          <input type="text" class="form-control" name="penName" placeholder="Pen Name">
+          {{#if penNameError}}
+            <small class=" ml-2 text-danger"> Please enter a pen name </small>
+          {{/if}}
+        </div>
+        <div class="form-group">
+          <label for="handle">Instagram Handle</label>
+          <input type="text" class="form-control" name="handle" placeholder="Instagram Handle">
+          {{#if handleError}}
+            <small class=" ml-2 text-danger"> what your gram? </small>
+          {{/if}}
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="text" class="form-control" name="email" placeholder="Email">
+          {{#if emailError}}
+            <small class=" ml-2 text-danger"> how else will we get in touch with you? </small>
+          {{/if}}
+        </div>
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input type="text" class="form-control" name="title" placeholder="Title">
+          {{#if titleError}}
+            <small class=" ml-2 text-danger"> all great works need a name. </small>
+          {{/if}}
+        </div>
+        <div class="form-group">
+          <label for="pitch">Pitch</label>
+          <textarea class="form-control" name="pitch" rows="3"></textarea>
+          {{#if pitchError}}
+            <small class=" ml-2 text-danger"> In 50 words or less whats your message </small>
+          {{/if}}
+        </div>
+        <div class="form-group">
+          <label for="article">Article</label>
+          <input type="file" class="form-control-file" name="article">
+          {{#if articleError}}
+            <small class=" ml-2 text-danger"> the artile is the most important part. We take all these types: doc, docx, odt, pdf, rtf, tex, txt, wpd </small>
+          {{/if}}
+        </div>
+        <div class="form-group">
+          <label for="photos">Cover Photo</label>
+          <input type="file" class="form-control-file" name="photo">
+          {{#if photoError}}
+            <small class=" ml-2 text-danger"> A picture is worth a thousand words. We take all these types: jpg, jpeg, bmp, gif, png</small>
+          {{/if}}
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" name="consent">
+          <label class="form-check-label" for="exampleCheck1"> <a href="#">
+              <p class="fira-sans" style="font-size: 1em; margin-left: 7px;"> Agree to Terms and Service </p>
+            </a> </label>
+        </div>
+        <button type="submit" class="btn btn-outline-danger">Submit</button>
+
+      </form>
+
+    </div>
+  </div>
+</div>
