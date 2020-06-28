@@ -1,0 +1,110 @@
+<div class="row " style="background-color: #E28413; height: 10vh">
+</div>
+<div class="row justify-content-center" style="background-color: #FF165D;">
+  <div class="col-8 p-4">
+    <div class="align-self-center">
+      <div style="background-color: #fff" class="rounded border mt-5 p-3">
+        <h1 style="color: #7A7B7F;" class="text-center pacifico ">Editorial</h1>
+        <hr>
+        <form method="post" action="/editorial" encType="multipart/form-data">
+          <div class=" p-2 ">
+            <div class="row ">
+              <div class=" border rounded col m-3 shadow hover">
+                <div class="text-center">
+                  <label for="photo" class="">
+                    <h1 id="coverText" style="color: #7A7B7F;" class="mt-3 text-center pacifico ">Cover Photo</h1>
+                    <img class="iconBig hidden" id="sample1" src="" alt="image uploaded">
+                    {{#if photoError}}
+                      <small class=" ml-2 text-danger">Excepted file types: jpg, jpeg, bmp, gif, png</small>
+                    {{/if}}
+                  </label>
+                  <input id="photo" name="photo" type="file" />
+                </div>
+              </div>
+              <div  class="border rounded col m-3 shadow hover">
+                <div  class="text-center">
+                  <label for="article" class="">
+                    <h1 id="articleText" style="color: #7A7B7F;" class="mt-3 text-center pacifico ">Article</h1>
+                    <img class="iconBig hidden" id="sample2" src="/img/file.png" alt="file uploaded">
+                    {{#if articleError}}
+                      <small class=" ml-2 text-danger">Excepted file types: doc, docx, odt, pdf, rtf, tex, txt, wpd </small>
+                    {{/if}}
+                  </label>
+                  <input id="article" name="article" type="file" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div class="border p-3 rounded shadow-sm">
+            <div class="form-group">
+              <label for="title">Title</label>
+              <input type="text" class="form-control" name="title" placeholder="Title">
+              {{#if titleError}}
+                <small class=" ml-2 text-danger">Forgot title</small>
+              {{/if}}
+            </div>
+            <div class="form-group">
+              <label for="penName">Pen Name</label>
+              <input type="text" class="form-control" name="penName" placeholder="Pen Name">
+              {{#if penNameError}}
+                <small class=" ml-2 text-danger">Gotta givem credit</small>
+              {{/if}}
+            </div>
+            <div class="form-group">
+              <label for="handle">Instagram Handle</label>
+              <input type="text" class="form-control" name="handle" placeholder="Instagram Handle">
+              {{#if handleError}}
+                <small class=" ml-2 text-danger">Missing Instagram handle</small>
+              {{/if}}
+            </div>
+          </div>
+          <hr>
+          <div class="border p-3 rounded shadow-sm">
+            <label for="handle">Quotes</label>
+
+            <div class="input-group mb-3 quote1 hidden">
+              <input type="text" class="form-control" name="quoteOne" placeholder="">
+              <div class="input-group-append">
+                <button id="quote1" class="btn btn-outline-secondary" onclick="removeQuote(this.id)" type="button">Remove</button>
+              </div>
+            </div>
+
+            <div class="input-group mb-3 quote2 hidden">
+              <input type="text" class="form-control" name="quoteTwo" placeholder="">
+              <div class="input-group-append">
+                <button id="quote2" class="btn btn-outline-secondary" onclick="removeQuote(this.id)" type="button">Remove</button>
+              </div>
+            </div>
+
+            <div class="input-group mb-3 quote3 hidden">
+              <input type="text" class="form-control" name="quoteThree" placeholder="">
+              <div class="input-group-append">
+                <button id="quote3" class="btn btn-outline-secondary" onclick="removeQuote(this.id)" type="button">Remove</button>
+              </div>
+            </div>
+
+            <div class="input-group mb-3 quote">
+              <input type="text" class="form-control" placeholder="New Quote">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary" onclick="addQuote()" type="button">Add</button>
+              </div>
+            </div>
+            <label for="handle">Tags</label>
+            <div class="input-group mb-3">
+              <input id="tag" type="text" class="form-control" placeholder="Add a Tag">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary" onclick="addTag()" type="button">Add</button>
+              </div>
+              <div id="tagDisplay" class="input-group mb-1">
+              </div>
+              <input id="tags" name="tags" type="hidden" value="">
+            </div>
+          </div>
+          <hr>
+          <button type="submit" class="btn btn-outline-danger pull-right">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
