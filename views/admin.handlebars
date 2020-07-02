@@ -7,7 +7,7 @@
       <div class="text-center">
         <h1 class="h3 mb-3 font-weight-normal pacifico">Sign In</h1>
       </div>
-      <form action="/admin" method="post" encType="multipart/form-data">
+      <form action="/admin" method="post" encType="application/json">
         <div class="mb-2">
           <label for="inputEmail" class="sr-only">Email address </label>
           <input type="email" class="form-control" placeholder="Email address" name="username" >
@@ -15,6 +15,9 @@
         <div class="mb-2">
           <label for="inputPassword" class="sr-only">Password</label>
           <input type="password"  class="form-control" placeholder="Password" name="password">
+          {{#if failedLogin}}
+            <small class=" ml-2 text-danger">Wrong Username or Password</small>
+          {{/if}}
         </div>
         <div class="mb-2">
           <button class="btn btn-sm btn-danger btn-block" type="submit">Sign in</button>

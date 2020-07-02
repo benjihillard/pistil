@@ -1,5 +1,5 @@
 // Dependencies
-const express = require("express");
+express = require("express");
 const path = require('path');
 const exphbs = require('express-handlebars');
 const session = require('express-session');
@@ -26,8 +26,10 @@ app.engine('handlebars', exphbs({
       login: true,
     }
 }));
-
 app.set('view engine', 'handlebars');
+
+// sett up database
+connection = require('./database/database.js')
 
 
 // handle About Page
@@ -55,7 +57,11 @@ const admin = require('./routes/admin.js');
 app.use('/admin', admin);
 
 // handle Success Page
-const success = require('./routes/Success.js');
+const article = require('./routes/article.js');
+app.use('/article', article);
+
+// handle Success Page
+const success = require('./routes/success.js');
 app.use('/success', success);
 
 // handle Error Page
