@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const fetch = require('node-fetch');
 
 
 router.get('/', (req, res) => {
@@ -13,8 +14,10 @@ router.get('/', (req, res) => {
       const tags = data.tags;
       const quotes = data.quotes;
       const photo = data.photo;
-      const article = data.article;
-      res.render('article', {penName, title, handle, tags, quotes, photo, article});
+      const articleLink = data.article;
+      fetch('http://localhost:3000/host/' + articleLink)
+      .then((res) => res.json())
+      .then((article) => res.render('article', {penName, title, handle, tags, quotes, photo, article}));
     });
   });
 

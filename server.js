@@ -56,9 +56,13 @@ app.use('/editorial', editorial);
 const admin = require('./routes/admin.js');
 app.use('/admin', admin);
 
-// handle Success Page
+// handle article Pages
 const article = require('./routes/article.js');
 app.use('/article', article);
+
+// handle article Pages
+const host = require('./routes/host.js');
+app.use('/host', host);
 
 // handle Success Page
 const success = require('./routes/success.js');

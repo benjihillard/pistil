@@ -172,5 +172,5 @@ $('#form').submit(function(){
     }else {
       $('#handleWarning').addClass('hidden');
     }
-    return false;
+    return success;
 });
