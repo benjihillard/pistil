@@ -1,4 +1,4 @@
-const express = require("express");
+
 const router = express.Router();
 const textract = require('textract');
 const mime = require('mime');
@@ -30,11 +30,9 @@ router.get('/:filename', (req, res) => {
         });
         readstream.on('end',function(){
           buf = buf.slice(6);
-          console.log(buf);
           textract.fromBufferWithMime(type , buf , { preserveLineBreaks: true } ,function( error, text ) {
             let re = /(.+)((\r?\n.S)*)/g;
-            let arr = text.match(re);
-            res.json({ article : arr })
+            res.json({ article : text.match(re)})
           })
         })
 

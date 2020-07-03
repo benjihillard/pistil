@@ -2,12 +2,14 @@
 express = require("express");
 const path = require('path');
 const exphbs = require('express-handlebars');
-const session = require('express-session');
+session = require('express-session');
 
 // set app an listening port
 const app = express();
 const port = process.env.port || 3000;
 
+
+app.locals.copyright = false;
 // middleware
 app.use(express.static(path.join(__dirname, '/public')));
 app.use(express.json());
@@ -16,14 +18,17 @@ app.use(session({
   secret: 'secret-key',
   resave: false,
   saveUninitialized: false,
-  loggedIn: true,
 }));
+app.use(function (req, res, next) {
+        res.locals.session = req.session;
+        next();
+    });
 
 // setting handle bars as backend framework
 app.engine('handlebars', exphbs({
   defaultLayout: 'main',
   helpers: {
-      login: true,
+      login: false,
     }
 }));
 app.set('view engine', 'handlebars');
@@ -60,9 +65,13 @@ app.use('/admin', admin);
 const article = require('./routes/article.js');
 app.use('/article', article);
 
-// handle article Pages
+// hosting content
 const host = require('./routes/host.js');
 app.use('/host', host);
+
+// hosting content
+const logout = require('./routes/logout.js');
+app.use('/logout', logout);
 
 // handle Success Page
 const success = require('./routes/success.js');

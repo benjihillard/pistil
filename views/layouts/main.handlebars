@@ -41,14 +41,18 @@
               <p class="d-flex pacifico">Catalog.</p>
             </a>
           </div>
+          {{#if session.loggedIn }}
           <div class=" mt-3 align-self-center justify-content-center d-flex">
             <a class="text-dark" href="/editorial">
               <p class="d-flex pacifico">Editorial.</p>
-              {{#if loggin}}
-              <p>blah</p>
-              {{/if}}
             </a>
           </div>
+          <div class=" mt-3 align-self-center justify-content-center d-flex">
+            <a class="text-dark" href="/logout">
+              <p class="d-flex pacifico">Log Out.</p>
+            </a>
+          </div>
+          {{/if}}
         </div>
       </div>
       <div id="exit" class="w-75 h-100 d-inline-flex bg-transparent ">

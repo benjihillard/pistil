@@ -1,4 +1,3 @@
-
 const bodyParser = require('body-parser');
 
 const router = express.Router();
@@ -18,7 +17,9 @@ router
     connection.usernames.findOne({ username: req.body.username }, function(err, data) {
       console.log(data);
       if (req.body.password == data.password) {
+        req.session.loggedIn = true;
         res.redirect('/');
+
       } else {
         res.render('admin', { failedLogin });
       }

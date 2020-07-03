@@ -1,8 +1,8 @@
-
 const router = express.Router();
 
 router.get('/', (req, res) => {
-  res.render('home');
+  req.session.loggedIn = false;
+  res.render('logout')
 });
 
 module.exports = router;
