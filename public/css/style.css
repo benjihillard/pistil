@@ -103,3 +103,15 @@ span.tags:hover {
 input[type="file"] {
     display: none;
 }
+
+.antiAnchor {
+  color: inherit;
+  text-decoration: none;
+}
+
+.antiAnchor:hover
+{
+  color: inherit;
+  text-decoration:none;
+  cursor:pointer;
+}

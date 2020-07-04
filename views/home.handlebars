@@ -6,7 +6,30 @@
       </div>
     </div>
   </div>
-  <div class="row" style="background-color: #E28413; height: 1000px;" >
+  <div class="row " style="background-color: #E28413; " >
+
+
+    {{#each catalog}}
+
+    <div  class="col-3 container shadow hover rounded border m-5 p-3"  style="background-color: white;">
+      <a class="antiAnchor" href="/article/{{title}}">
+          <div class="row">
+            <img style="height: 10em; width: 20em; margin:3px auto;" src="/editorial/{{this.photo}}" alt="">
+          </div>
+          <div class="row">
+            <p style="margin:3px auto; font-size: 1.4em;" class="text-center fira-sans">{{this.title}}</p>
+          </div>
+          <div class="row justify-content-center">
+            {{#each this.tags}}
+            <p style="font-size: 1em" class="tags fira-sans m-1" >{{this}}</p>
+            {{/each}}
+          </div>
+      </a>
+    </div>
+    {{/each}}
+
+
+
 
   </div>
 </div>

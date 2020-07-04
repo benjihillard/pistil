@@ -2,8 +2,7 @@
 express = require("express");
 const path = require('path');
 const exphbs = require('express-handlebars');
-session = require('express-session');
-
+const session = require('express-session');
 // set app an listening port
 const app = express();
 const port = process.env.port || 3000;
@@ -27,8 +26,8 @@ app.use(function (req, res, next) {
 // setting handle bars as backend framework
 app.engine('handlebars', exphbs({
   defaultLayout: 'main',
-  helpers: {
-      login: false,
+  allowedProtoMethods: {
+      trim: true
     }
 }));
 app.set('view engine', 'handlebars');
