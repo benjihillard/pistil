@@ -26,8 +26,11 @@ app.use(function (req, res, next) {
 // setting handle bars as backend framework
 app.engine('handlebars', exphbs({
   defaultLayout: 'main',
-  allowedProtoMethods: {
-      trim: true
+  helpers: {
+        includes: require('./helpers/includes.js').includes,
+        post: function (title) {
+          console.log(title);
+          return title.toString();}
     }
 }));
 app.set('view engine', 'handlebars');

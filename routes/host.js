@@ -1,7 +1,8 @@
-
 const router = express.Router();
 const textract = require('textract');
 const mime = require('mime');
+var bodyParser = require('body-parser')
+
 
 
 router.get('/:filename', (req, res) => {
@@ -23,7 +24,6 @@ router.get('/:filename', (req, res) => {
         // Read output to browser
         const readstream = gfs.createReadStream(file.filename);
         const type = mime.getType(file.filename);
-        console.log(type);
         var buf = new Buffer.from('buffer');
         readstream.on('data',function(chunk){
           buf = Buffer.concat([buf, chunk]);
@@ -49,6 +49,37 @@ router.get('/:filename', (req, res) => {
     console.log(err);
   });
 })
+.post('/delete',  (req, res) => {
+  console.log(req.body);
+  connection.articles.findOne({ title: req.body.title }, (err, data) => {
+
+    connection.gridFiles.then((gfs) => {
+      gfs.remove({ filename: data.photo, root: 'article' }, (err, gridStore) => {
+        if (err) {
+          return res.status(404).json({ err: err });
+        }
+        console.log('deleted photo');
+
+      });
+      gfs.remove({ filename: data.article, root: 'article' }, (err, gridStore) => {
+        if (err) {
+          return res.status(404).json({ err: err });
+        }
+        console.log('deleted article');
+
+
+      });
+      console.log(data.title);
+      console.log(data.photo);
+      console.log(data.article);
+    });
+  });
+  connection.articles.deleteOne({ title: req.body.title }, function (err) {
+    if (err) return handleError(err);
+  });
+
+  res.redirect('/');
+});
 
 
 module.exports = router;
