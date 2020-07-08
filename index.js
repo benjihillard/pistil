@@ -5,7 +5,7 @@ const exphbs = require('express-handlebars');
 const session = require('express-session');
 // set app an listening port
 const app = express();
-const port = process.env.port || 3000;
+const port = process.env.port;
 
 
 app.locals.copyright = false;
@@ -90,4 +90,4 @@ const terms = require('./routes/terms.js');
 app.use('/terms', terms);
 
 // listen
-app.listen(port, () => console.log(`Running at Port ${port}`));
+app.listen(port);
