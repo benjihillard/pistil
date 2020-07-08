@@ -1,7 +1,7 @@
 {
   "name": "pistil",
   "version": "1.0.0",
-  "description": "",
+  "description": "online magazine",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/benjihillard/pistil.git"
   },
-  "author": "",
+  "author": "benji",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/benjihillard/pistil/issues"
@@ -41,5 +41,8 @@
   },
   "devDependencies": {
     "handlebars": "^4.5.0"
-  }
+  },
+  "keywords": [
+    "pistil"
+  ]
 }
