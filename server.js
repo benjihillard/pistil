@@ -30,7 +30,9 @@ app.engine('handlebars', exphbs({
         includes: require('./helpers/includes.js').includes,
         post: function (title) {
           console.log(title);
-          return title.toString();}
+          return title.toString();
+        },
+        limit: require('./helpers/limit.js').limit,
     }
 }));
 app.set('view engine', 'handlebars');
@@ -82,6 +84,10 @@ app.use('/success', success);
 // handle Error Page
 const error = require('./routes/error.js');
 app.use('/error', error);
+
+// handle Terms and Services Page
+const terms = require('./routes/terms.js');
+app.use('/terms', terms);
 
 // listen
 app.listen(port, () => console.log(`Running at Port ${port}`));

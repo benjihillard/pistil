@@ -1,1 +1,58 @@
-<h1>about</h1>
+<div style="z-index:1000;" class='wrapper row'>
+  <div class='firstDiv'></div>
+  <div class='secondDiv'></div>
+  <div class='thirdDiv'></div>
+  <h1 class="pacifico" style="color: #EF271B; font-size: 5em; left: 50%; top: 250px; transform: translate(-50%, -50%); position: absolute;">about us</h1>
+</div>
+<div class="row" style="background-color: grey; height: 300px;">
+
+</div>
+<div class="row justify-content-center" style="background-color: grey; z-index:-1000;">
+  <div class="col-8 text-center">
+    <hr>
+    <p style="font-size: 1.6em" class="text-center fira-sans">Pistil Magazine was created as an open forum and literary platform for women of all ages who want to explore the world beyond the social constructs. A place in which you can learn about who you truly are by expanding your mind and reading raw unfiltered experiences of the strong women around you. A space of no judgment or competitiveness but complete empathy and unconditional love. To support the growth of women in their lives and the difference they will make in the future. </p>
+    <hr>
+  </div>
+</div>
+<div class="row justify-content-center " style="background-color: grey; z-index:-1000;">
+  <div class="col-8 text-center m-3">
+    <img style="height: 10em; width: 10em; border-radius: 100%" src="/img/bio2.jpeg" alt="">
+  </div>
+</div>
+<div class="row justify-content-center " style="background-color: grey; z-index:-1000;">
+  <div class="col-8 text-center m-3">
+    <h1 style="font-size: 3em; color: #EF271B;" class="pacifico text-center">Founder // Editor</h1>
+    <hr>
+    <p style="font-size: 1.6em" class="text-center fira-sans">Rebecca Hillard is a poet, fiction, nonfiction writer and founder of Pistil Magazine. Rebecca quit her job in law two years ago to travel the world. Rebecca is passionate about sharing her experiences with others and taking a creative approach to dealing with anxiety, depression, and addiction. Her work was recently published in Tiny Buddha.</p>
+    <hr>
+  </div>
+</div>
+<div class="row justify-content-center " style="background-color: grey; z-index:-1000;">
+  <div class="col-8 text-center m-3">
+    <a href="https://www.instagram.com/becca_hillard"><img class="m-2" style="height: 2.5em; width: 2.5em;" src="/img/instagram.png" alt="instagram"></a>
+    <a href="mailto:pistilmag@gmail.com"><img class="m-2" style="height: 3em; width: 3em;" src="/img/gmail.png" alt="email"></a>
+  </div>
+</div>
+
+
+
+
+
+<script type="text/javascript">
+  $(window).scroll(function() {
+    var scrollPos = $(this).scrollTop();
+    console.log(scrollPos);
+    var first = $(".firstDiv").position();
+    var second = $(".secondDiv").position();
+    var third = $(".thirdDiv").position();
+    $(".firstDiv").css({
+      'right': scrollPos*10 + 'px'
+    });
+    $(".secondDiv").css({
+      'left': scrollPos*4 + 'px'
+    });
+    $(".thirdDiv").css({
+      'top' : -scrollPos + 'px'
+    });
+  });
+</script>
