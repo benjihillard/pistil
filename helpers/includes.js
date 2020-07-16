@@ -7,7 +7,7 @@ module.exports.includes = function(para, quotes) {
       console.log(i);
       console.log(quotes.length);
       console.log('success');
-      return `<div class="row">
+      return `<div class="row"> s
         <div class="col ">
           <div class="m-2">
             <p class=" fira-sans text-center quotes">` + quotes[i] + `</p>
