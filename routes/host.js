@@ -23,6 +23,7 @@ router.get('/:filename', (req, res) => {
         readstream.pipe(res);
       } else if (file.contentType === 'application/octet-stream') {
         // Read output to browser
+        console.log('not image............................');
         const readstream = gfs.createReadStream(file.filename);
         const type = mime.getType(file.filename);
         var buf = new Buffer.from('buffer');
