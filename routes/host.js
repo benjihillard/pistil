@@ -31,6 +31,7 @@ router.get('/:filename', (req, res) => {
         });
         readstream.on('end',function(){
           buf = buf.slice(6);
+          console.log('break.................................................................................................');
           textract.fromBufferWithMime(type , buf , { preserveLineBreaks: true } ,function( error, text ) {
             let re = /(.+)((\r?\n.S)*)/g;
             res.json({ article : text.match(re)})
