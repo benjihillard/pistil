@@ -7,6 +7,7 @@ router.get('/', (req, res) => {
     res.render('error');
   })
   .get('/:title', async (req, res) => {
+    console.log('get data');
     connection.articles.findOne({ title: req.params.title }, (err, data) => {
       if (err) {
         res.render('error');
@@ -18,6 +19,7 @@ router.get('/', (req, res) => {
       const quotes = data.quotes;
       const photo = data.photo;
       const articleLink = data.article;
+      console.log('got host');
       fetch('http://localhost:3000/host/' + articleLink)
       .then((res) => res.json())
       .then((article) => {
