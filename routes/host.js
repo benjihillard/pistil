@@ -6,6 +6,7 @@ var bodyParser = require('body-parser')
 
 
 router.get('/:filename', (req, res) => {
+  console.log('opps');
   connection.gridFiles.then((gfs) => {
     gfs.files.findOne({ filename: req.params.filename }, (err, file) => {
       // Check if file
