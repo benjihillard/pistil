@@ -10,11 +10,12 @@ const path = require('path');
 
 //article object
 const article = {
+  tags: Array,
+  quotes : Array,
   penName: String,
   title: String,
   handle: String,
   tagsExist: Boolean,
-  tags: Array,
   quotesExist: Boolean,
   quotes : Array,
   photo: String,
