@@ -21,7 +21,7 @@ router.get('/:filename', (req, res) => {
         // Read output to browser
         const readstream = gfs.createReadStream(file.filename);
         readstream.pipe(res);
-      } else if (file.contentType === 'application/octet-stream') {
+      } else if (file.contentType === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document') {
         // Read output to browser
         console.log('not image............................');
         const readstream = gfs.createReadStream(file.filename);
