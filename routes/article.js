@@ -9,7 +9,6 @@ router.get('/', (req, res) => {
   .get('/:title', async (req, res) => {
     console.log('get data');
     connection.articles.findOne({ title: req.params.title }, (err, data) => {
-      console.log(req.params.title);
       if (err) {
         console.log(err);
       }
@@ -26,7 +25,7 @@ router.get('/', (req, res) => {
       .then((article) => {
         connection.articles.find({}).lean().exec(function(error, data) {
           if (error) {
-            res.render('error');
+            console.log(error);
           }
            res.render('article', {penName, title, handle, tags, quotes, photo, article,data})
         });
