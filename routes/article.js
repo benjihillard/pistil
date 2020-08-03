@@ -9,6 +9,7 @@ router.get('/', (req, res) => {
   .get('/:title', async (req, res) => {
     console.log('get data');
     connection.articles.findOne({ title: req.params.title }, (err, data) => {
+      console.log(req.params.title);
       if (err) {
         res.render('error');
       }
