@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
     connection.articles.findOne({ title: req.params.title }, (err, data) => {
       console.log(req.params.title);
       if (err) {
-        res.render('error');
+        console.log(err);
       }
       const penName = data.penName;
       const title = data.title;
