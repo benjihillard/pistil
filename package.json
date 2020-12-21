@@ -1,7 +1,7 @@
 {
   "name": "pistil",
   "version": "1.0.0",
-  "description": "online magazine",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/benjihillard/pistil.git"
   },
-  "author": "benji",
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/benjihillard/pistil/issues"
@@ -39,9 +39,14 @@
     "textract": "^2.5.0"
   },
   "devDependencies": {
+<<<<<<< HEAD
     "handlebars": "^4.7.6"
   },
   "keywords": [
     "pistil"
   ]
+=======
+    "handlebars": "^4.5.0"
+  }
+>>>>>>> parent of abf5d3a... index
 }
