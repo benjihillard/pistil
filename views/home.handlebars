@@ -1,0 +1,39 @@
+<div>
+  <div id="title" class="row pb-5 pt-1 " style="background-color: #FF165D">
+    <div class="col-12 d-flex justify-content-center">
+      <div class="align-self-center">
+        <img class="img-fluid" src="/img/pistilLogo.png" alt="pistil logo">
+
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center" style="background-color: #E28413; " >
+
+    {{#each catalog}}
+
+    <div  class="col-xs-12 col-sm-6 col-md-4 col-lg-3 container shadow hover rounded border m-5 p-3"  style="background-color: white;">
+      {{#if ../session.loggedIn}}
+      <img class="float-right" src="/img/circleX.png" onclick="deleteArticle('{{title}}')" ></img>
+      <br>
+      {{/if}}
+      <a class="antiAnchor" href="/article/{{this.title}}">
+          <div class="row">
+            <img   class="img-fluid p-3" src="/editorial/{{photo}}" alt="">
+          </div>
+          {{#if this.tagsExist}}
+          <div class="row justify-content-center">
+            {{#each this.tags}}
+            <p style="font-size: 1em" class="tags fira-sans m-1" >{{this}}</p>
+            {{/each}}
+          </div>
+          {{/if}}
+          <div class="row">
+            <p style="margin:3px auto; font-size: 1.4em;" class="text-center fira-sans pl-3 pr-3">{{this.title}}</p>
+          </div>
+
+      </a>
+    </div>
+    {{/each}}
+
+  </div>
+</div>

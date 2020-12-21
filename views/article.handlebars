@@ -1,0 +1,42 @@
+<div style="margin: 0vh 15vw">
+  <div class="row">
+    <div class="col m-3">
+      <div class="text-center">
+        <img class="rect" src="/editorial/{{photo}}" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col d-flex justify-content-center">
+      <div class="align-self-center m-3">
+        <h1 class=" bungee">{{title}}</h1>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col ">
+      <div class="m-2">
+        <p style="font-size: 1.2em" class=" pacifico ">Written By {{penName}}</p>
+        <p style="font-size: .7em" class=" bungee ">Instagram: {{handle}}</p>
+      </div>
+    </div>
+  </div>
+  {{#each article.article}}
+  <div class="row">
+    <div class="col ">
+      <div class="m-2">
+        <p style="font-size: 1em" class=" fira-sans ">{{this}}</p>
+      </div>
+    </div>
+  </div>
+  {{#includes this ../quotes}}
+  <div class="row">
+    <div class="col ">
+      <div class="m-2">
+        <p class=" fira-sans text-center quote">yeet</p>
+      </div>
+    </div>
+  </div>
+  {{/includes}}
+  {{/each}}
+</div>
