@@ -17,7 +17,7 @@ router.get('/:filename', (req, res) => {
       }
 
       // Check if image
-      if (file.contentType === 'image/jpeg' || file.contentType === 'image/png' || file.contentType ==='image/bmp' || file.contentType === 'image/gif' || file.contentType === 'image/png') {
+      if (file.contentType === 'image/jpeg' || file.contentType === 'image/png') {
         // Read output to browser
         const readstream = gfs.createReadStream(file.filename);
         readstream.pipe(res);
@@ -81,7 +81,7 @@ router.get('/:filename', (req, res) => {
     if (err) return handleError(err);
   });
 
-  res.redirect(req.get('referer'));
+  res.redirect('/');
 });
 
 

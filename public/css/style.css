@@ -87,9 +87,6 @@ span.tags:hover {
   background-color: red !important;
 }
 
-
-
-
 .hidden{
   display: none !important;
 
@@ -97,10 +94,6 @@ span.tags:hover {
 
 .hover:hover{
   background-color: #F5F5F5;
-}
-
-.hoverPink:hover{
-  background-color: #FF165D;
 }
 
 .hover:active{
@@ -127,32 +120,4 @@ input[type="file"] {
   font-size: 2em;
   border-top: 3px solid black;
   border-bottom: 3px solid black;
-}
-
-
-
-.wrapper{
-  position: relative;
-}
-
-.firstDiv{
-  position: absolute;
-  width: 100%;
-  height: calc(100vh);
-  background: url('/img/hill1.png') no-repeat 50% 50%;
-  background-size: cover;
-}
-.secondDiv{
-  position: absolute;
-  width: 100%;
-  height: calc(100vh);
-  background: url('/img/hill2.png') no-repeat 50% 50%;
-  background-size: cover;
-}
-.thirdDiv{
-  position: absolute;
-  width: 100%;
-  height: calc(100vh);
-  background: url('/img/hill3.png') no-repeat 50% 50%;
-  background-size: cover;
 }

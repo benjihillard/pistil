@@ -149,8 +149,11 @@ if (req.body.consent == undefined){
    // send email
    transporter.sendMail(mailOptions, function(error, info) {
      if (error) {
-        res.render('/error')
-      }
+       res.render('error');
+       console.log(error);
+     } else {
+       console.log('success');
+     }
    });
    res.redirect('/success')
  } else {

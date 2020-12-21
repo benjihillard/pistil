@@ -20,7 +20,7 @@ var tags = [];
 //add tag
 function addTag() {
   const colors = ['#2274A5', '#F75C03', '#F1C40F', '#D90368', '#00CC66'];
-  const forbidden = ["form","coverText","photoWarning","sample1","article","articleText","sample2","articleWarning","title","penName","penNameWarning","handle","handleWarning","quote1","quote2","quote3","tag","tagDisplay","tags"];
+  const forbidden = [];
   const tag = $("#tag").val();
   const color = colors[hash(tag)];
   tags.push(tag);
@@ -36,6 +36,7 @@ function addTag() {
 
   $(html).insertAfter("#tagDisplay");
   $("#tag").val('');
+  console.log(tags);
   $('#tags').val(tags)
 }
 
@@ -133,16 +134,17 @@ function readURL(input) {
 $('#form').submit(function() {
   var success = true;
   const validPhotoExtensions = ["jpg", "jpeg", "bmp", "gif", "png"];
-  const validArticleExtensions = ["doc", "docx", "txt"];
+  const validArticleExtensions = ["doc", "docx", "odt", "pdf", "rtf", "tex", "txt", "wpd"];
   //photo
-  if (!$('#photo').val() || !validPhotoExtensions.includes((/[^.]+$/.exec($('#photo').val())[0])).toLowerCase()) {
+  if (!$('#photo').val() || !validPhotoExtensions.includes(/[^.]+$/.exec($('#photo').val())[0])) {
     $('#photoWarning').removeClass('hidden');
     success = false;
   } else {
     $('#photoWarning').addClass('hidden');
   }
   //document
-  if (!$('#article').val() || !validArticleExtensions.includes((/[^.]+$/.exec($('#article').val())[0])).toLowerCase()) {
+  console.log($('#article').val());
+  if (!$('#article').val() || !validArticleExtensions.includes(/[^.]+$/.exec($('#article').val())[0])) {
     $('#articleWarning').removeClass('hidden');
     success = false;
   } else {

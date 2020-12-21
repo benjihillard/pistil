@@ -1,25 +1,23 @@
-<script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=5f0386e52f9b510012b4b69a&product=inline-share-buttons" async="async"></script>
-<div style="margin: 0vh 10vw">
+<div style="margin: 0vh 15vw">
   <div class="row">
     <div class="col m-3">
       <div class="text-center">
-        <img class="img-fluid" src="/host/{{photo}}" alt="">
+        <img class="rect" src="/editorial/{{photo}}" alt="">
       </div>
     </div>
   </div>
-  <div class="sharethis-inline-share-buttons"></div>
   <div class="row">
     <div class="col d-flex justify-content-center">
       <div class="align-self-center m-3">
-        <p style="font-size: 4em" class="text-center pacifico">{{title}}</p>
+        <h1 class=" bungee">{{title}}</h1>
       </div>
     </div>
   </div>
   <div class="row">
     <div class="col ">
       <div class="m-2">
-        <p style="font-size: 1em; font-style: oblique !important;" class=" fira-sans ">Written By {{penName}}</p>
-        <p style="font-size: 1em; font-style: italic;" >Instagram: {{handle}}</p>
+        <p style="font-size: 1.2em" class=" pacifico ">Written By {{penName}}</p>
+        <p style="font-size: .7em" class=" bungee ">Instagram: {{handle}}</p>
       </div>
     </div>
   </div>
@@ -41,22 +39,4 @@
   </div>
   {{/includes}}
   {{/each}}
-</div>
-<div class="row justify-content-center">
-  <p class="pacifico text-center" >You may also like...</p>
-</div>
-<div style="min-height: 25em; margin: auto 20%;"class="row justify-content-center mb-5">
-
-    {{#each (limit data 4)}}
-    <div style=" max-width: 12em; " class="hoverPink m-1 col">
-      <div class="row">
-        <img class="img-fluid p-2" src="/host/{{this.photo}}" alt="">
-      </div>
-      <div class="row">
-        <p style=" font-size: 2em" class="pacifico p-2 text-center">{{this.title}}</p>
-      </div>
-    </div>
-    {{/each}}
-
-
 </div>
