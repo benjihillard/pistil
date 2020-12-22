@@ -1,0 +1,93 @@
+<div class="row" style="background-color: #FF165D;">
+  <div class="col-12 d-flex pt-4 justify-content-center">
+    <div class="align-self-center">
+      <hr style="border-top: 6px solid black; border-radius: 2px;">
+      <p class="p-2 pacifico">Tell Your Story!</p>
+      <hr style="border-top: 6px solid black; border-radius: 2px;">
+    </div>
+  </div>
+</div>
+<div class="row justify-content-center" style="background-color: #FF165D;">
+    <div class="col-8 pb-4 ">
+      <div class="align-self-center">
+        <div style="background-color: #fff" class="rounded border mt-5 p-3">
+          <h1 style="color: #7A7B7F;" class="text-center pacifico ">Submissions</h1>
+          <hr>
+          <form id="form" method="post" action="/submissions" encType="multipart/form-data">
+            <div class=" p-2 ">
+              <div class="row ">
+
+                    <label for="photo" class="text-center border rounded col m-1 shadow hover rec">
+                      <h1 id="coverText" style="color: #7A7B7F;" class="mt-3 text-center pacifico ">Cover Photo</h1>
+                      <img style="padding: 1em;" class="img-fluid hidden" id="sample1" src="" alt="not an image">
+                      <small id="photoWarning" class="hidden ml-2 text-danger">Excepted file types: jpg, jpeg, bmp, gif, png</small>
+                    </label>
+                    <input id="photo" name="photo" type="file" />
+
+                    <label for="article" class="text-center border rounded col m-1 shadow hover rec">
+                      <h1 id="articleText" style="color: #7A7B7F;" class="mt-3 text-center pacifico ">Article</h1>
+                      <img style="padding: 1em;" class="img-fluid hidden" id="sample2" src="/img/file.png" alt="file uploaded">
+                      <p style="padding: 0.2em; word-wrap: break-word; font-size: 0.6em" class="hidden" id="sample2-2"></p>
+                      <small id="articleWarning" class="hidden ml-2 text-danger">Excepted file types: doc, docx, odt, pdf, rtf, tex, txt, wpd </small>
+                    </label>
+                    <input id="article" name="article" type="file" />
+
+              </div>
+            </div>
+            <hr>
+            <div class="border p-3 rounded shadow-sm">
+              <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" class="form-control" name="title" placeholder="Title">
+                {{#if titleError}}
+                  <small class=" ml-2 text-danger"> All great works need a name. </small>
+                {{/if}}
+              </div>
+              <div class="form-group">
+                <label for="penName">Pen Name</label>
+                <input type="text" class="form-control" name="penName" placeholder="Pen Name">
+                {{#if penNameError}}
+                  <small class=" ml-2 text-danger"> Gotta protect your identity, what if this makes you famous</small>
+                {{/if}}
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" class="form-control" name="email" placeholder="Email">
+                {{#if emailError}}
+                  <small class=" ml-2 text-danger"> How else will we get in touch with you? </small>
+                {{/if}}
+              </div>
+              <div class="form-group">
+                <label for="handle">Instagram Handle</label>
+                <input type="text" class="form-control" name="handle" placeholder="Instagram Handle">
+                {{#if handleError}}
+                  <small class=" ml-2 text-danger"> What your gram? </small>
+                {{/if}}
+              </div>
+            </div>
+            <hr>
+            <div class="border p-3 rounded shadow-sm">
+              <div class="form-group">
+                <label for="pitch">Pitch</label>
+                <textarea class="form-control" name="pitch" rows="3"></textarea>
+                {{#if pitchError}}
+                  <small class=" ml-2 text-danger"> In 50 words or less whats your message </small>
+                {{/if}}
+              </div>
+            </div>
+            <hr>
+            <button type="submit" class="btn btn-outline-danger pull-right">Submit</button>
+            <div class="form-check float-right">
+              <input type="checkbox" class="form-check-input" name="consent">
+              <label class="form-check-label" for="exampleCheck1">
+                 <a href="/terms" target="_blank"><p class="fira-sans" style="font-size: 1em; margin-left: 7px;"> Agree to Terms and Service </p></a>
+               </label>
+               {{#if consentError}}
+                 <small class=" ml-2 text-danger"> At least pretend you read it.</small>
+               {{/if}}
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
