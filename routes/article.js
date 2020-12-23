@@ -6,7 +6,7 @@ const fetch = require('node-fetch');
 router.get('/', (req, res) => {
     res.render('error');
   })
-  .get('/:title', async (req, res) => {
+  .get('/:title', (req, res) => {
     console.log(req.params.title);
     connection.articles.findOne({ title: req.params.title }, (err, data) => {
       if (err) {
