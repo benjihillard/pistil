@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
     res.redirect('/catalog');
     return
   }
-  connection.articles.find({ tags: 'Movies' }).lean().exec(function(error, data) {
+  connection.articles.find({ tags: req.params.search }).lean().exec(function(error, data) {
     if (error) {
       res.render('error');
     }
