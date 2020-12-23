@@ -25,7 +25,7 @@ router.get('/', (req, res) => {
       const photo = data.photo;
       const articleLink = data.article;
       console.log(process.env.PORT + '/host/' + articleLink);
-      fetch(process.env.PORT + '/host/' + articleLink)
+      fetch('https://pistil.herokuapp.com/host/' + articleLink)
       .then((res) => res.json())
       .then((article) => {
         connection.articles.find({}).lean().exec(function(error, data) {
