@@ -6,7 +6,7 @@ const fetch = require('node-fetch');
 router.get('/', (req, res) => {
     res.render('error');
   })
-  .get('/:title', (req, res) => {
+  .get('/:title', async (req, res) => {
     console.log(req.params.title);
     connection.articles.findOne({ title: req.params.title }, (err, data) => {
       if (err) {
@@ -24,7 +24,8 @@ router.get('/', (req, res) => {
       const quotes = data.quotes;
       const photo = data.photo;
       const articleLink = data.article;
-      fetch('http://localhost:3000/host/' + articleLink)
+      console.log(process.env.PORT + '/host/' + articleLink);
+      fetch(process.env.PORT + '/host/' + articleLink)
       .then((res) => res.json())
       .then((article) => {
         connection.articles.find({}).lean().exec(function(error, data) {
