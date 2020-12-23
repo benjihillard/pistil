@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
      res.render('catalog', {catalog: data});
   });
 })
-.post('/:search', (req, res) => {
+.get('/:search', (req, res) => {
   if(req.params.search == undefined){
     res.redirect('/catalog');
     return
