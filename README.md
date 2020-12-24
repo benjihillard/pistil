@@ -12,14 +12,13 @@ Click [here](https://youtu.be/0GxS2499qEs) or on the gif to see a demo.
 
 ### Backlog
 
-- Timer based toggling
-- Upgrade parser to more file types
+- Accept more complex documents (pdfs with images)
+- Differentate between fonts sizes in documents, then relfex that web page
 - Make moblie friendly
 
 ### Bugs
 
-- Interprets multiple newlines as paragraphs has.
-- Doesn't always follow reader by scrolling down the page
-- Complex pdf formats tent to mess up paragraph formatting during parsing 
+- Imgages sometimes get warped on mobile
+- Tags dont remove if new one isnt added
 
 
