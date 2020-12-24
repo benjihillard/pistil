@@ -1,6 +1,6 @@
 # Pistil Magazine
 
-
+Pistil Magazine was created as an open forum and literary platform for women of all ages who want to explore the world beyond the social constructs. A place in which you can learn about who you truly are by expanding your mind and reading raw unfiltered experiences of the strong women around you. A space of no judgment or competitiveness but complete empathy and unconditional love. To support the growth of women in their lives and the difference they will make in the future.
 
 
 
